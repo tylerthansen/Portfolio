@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Triforce</title>
+<style media=”screen” type = “text.css”>
+body {
+    background-color:#1bb04c;
+}
+
+.stone {
+    position:absolute;
+    height:90px;
+    width:80%;
+    bottom:10%;
+    left:10%;
+    background-color:#bbb;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size:24px;
+    color:#888;
+    text-shadow: 1px 1px 1px #eee;
+}
+
+/* I wanted to use perspective and transform:rotateX here to make the .stone look like a stone carving underneath the twirling triforce, but couldnt figure out how to get it to look right without skewing the rotateY animation of the twirling triforce. Maybe later... */
+
+.triangle {
+    display:inline-block;
+    width:0;
+    height:0;
+    border-left:65px solid transparent;
+    border-right:65px solid transparent;
+    border-bottom:100px solid yellow;
+    border-top:0px solid transparent;
+    animation:twirl 3.3s ease .9s infinite normal ;
+}
+
+/* Using a size zero div's borders to make a triangle was not my first idea, but I found it googling 'triangle div', cool stuff. */
+
+@keyframes twirl {
+    0% {transform:rotateY(0deg);}
+    80% {transform:rotateY(179deg);}
+    100% {transform:rotateY(179deg);}
+}
+</style>
+    </head>
+    <body>
+      <center>
+        <div class="triangle"></div><br />
+        <div class="triangle"></div>
+        <div class="triangle"></div><br />
+        <div class="stone">
+        Power<br /> 
+        Wisdom<br /> 
+        Courage<br /></div>
+      </center>
+    </body>
+</html>
